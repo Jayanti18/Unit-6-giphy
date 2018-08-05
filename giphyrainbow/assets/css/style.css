@@ -1,0 +1,13 @@
+body {
+    background-color: aquamarine;
+}
+
+button {
+    margin: 5px;
+}
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
