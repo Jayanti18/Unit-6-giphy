@@ -15,7 +15,7 @@ var animals = ["cat", "dog", "rabbit", "tiger", "lion", "chicken", "goldfish", "
                 // Grabbing and storing the data-animal property value from the button
                 var animal = $(this).attr("data-name");
                 // var dstill = $(this).attr("data-state");
-                var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=MPP1hsyRO2fkXqhVydWUuVh3BtfhEztj&limit=10";
+                var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=MPP1hsyRO2fkXqhVydWUuVh3BtfhEztj&limit=10";
 
                 // AJAX GET request to queryURL
                 $.ajax({
