@@ -40,20 +40,21 @@ var animals = ["cat", "dog", "rabbit", "tiger", "lion", "chicken", "goldfish", "
 
                             // Creating and storing an image tag
                             var animalImage = $("<img>");
+                            animalImage.addClass("gif");
 
                             // Setting the src attribute of the image to a property pulled off the result item, also stroe the still url in variable data-still and animated url in data-animate
 
                             animalImage.attr("src", results[i].images.fixed_height.url);
-                            animalImage.attr("datastill", results[i].images.fixed_height_still.url);
-                            animalImage.attr("dataanimate", results[i].images.fixed_height.url);
-                            animalImage.attr("datastate", 'unstill');
+                            animalImage.attr("data-still", results[i].images.fixed_height_still.url);
+                            animalImage.attr("data-animate", results[i].images.fixed_height.url);
+                            animalImage.attr("data-state", 'unstill');
 
                             // animalImage.attr("src", results[i].images.fixed_height.url, "dataanimate", results[i].images.fixed_height.url, "datastill", results[i].images.fixed_height_still.url, "data-state:", "unstill");
                             // animalImage.attr({
                             //     src: results[i].images.fixed_height.url,
                             //     dataanimate: results[i].images.fixed_height.url,
                             //     datastill: results[i].images.fixed_height_still.url,
-                            //     datastate: "unstill" 
+                            //     data-state: "unstill" 
                             // });
 
 
@@ -109,18 +110,18 @@ var animals = ["cat", "dog", "rabbit", "tiger", "lion", "chicken", "goldfish", "
             $(".gif").on("click", function () {
                 // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
                 // var state = $(this).attr("datastate");
-                var state = JSON.parse("datastate");
+                var state = JSON.parse("data-state");
                 // If the clicked image's state is still, update its src attribute to what its data-animate value is.
                 // Then, set the image's data-state to animate
                 // Else set src to the data-still value
                 if (state !== "still") {
-                    $(this).attr("src", $(this).attr("datastill"));
-                    $(this).attr("datastate", "still");
+                    $(this).attr("src", $(this).attr("data-still"));
+                    $(this).attr("data-state", "still");
                 } else {
-                    $(this).attr("src", $(this).attr("dataanimate"));
-                    $(this).attr("datastate", "animate");
+                    $(this).attr("src", $(this).attr("data-animate"));
+                    $(this).attr("data-state", "animate");
                 }
-                $(this).attr("src", JSON.PARSE("datastill"));
+                $(this).attr("src", JSON.PARSE("data-still"));
             });
 
 
